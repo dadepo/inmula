@@ -1,0 +1,95 @@
+<div id="left_content">
+
+<h2>Connect Alumnus</h2>
+<span id='intro'>
+Use the Connect Alumnus section to find alumnus. It is a search tool that allows you to search for fellow AIESEC Alumnus 
+</span>
+
+<h3>Search</h3>
+<br/>
+
+<div id='searchdiv'>
+<?php 
+echo "<h5>Name of Alumnus</h5>";
+echo $this->formText('searchname','',array('placeholder'=>'Name of Alumnus','id'=>'searchname','class'=>'span7'));
+echo $this->formButton('searchalumni','Find',array('id'=>'searchbtn','class'=>'primary btn'));
+echo "<br/><br/>";
+//echo "<span>Alumni Hub </span>".$this->formCheckbox('searchtype','hub',array('checked'=>'checked'),array());
+//echo " <span>Linkedin </span>".$this->formCheckbox('searchtypelinkedin','linkedin',array(),array());
+echo "<br/><br/>";
+echo "<span id='searchfilter'>Apply Search Filter</span>";
+
+?>
+<br/><br/>
+<div id='filter4hub' style="display:none">
+<?php 
+echo "<div class='thefilters'><span>By Member Committee </span>";
+echo $this->aiesecmcs('country','country','country');
+echo "</div>";
+//
+//echo "<div class='thefilters'><span>By Membership Year </span>";
+//echo "<span class='filterlabel'> From </span>";
+//echo "<span class='filterlabel'><input type='text' class='datepicker' /></span>";
+//echo "<span class='filterlabel'> to </span>";
+//echo "<span class='filterlabel'><input type='text' class='datepicker' /></span>";
+//echo "</div>";
+//
+echo "<div class='thefilters'><span>By Events Attended </span>";
+echo $this->formSelect('events','','',array('IC'=>'IC','IPM'=>'IPM'));
+echo "</div>";
+?>
+
+
+</div>
+
+<div id="searchresultorganic">
+
+</div>
+
+
+
+</div>
+
+<div id='searchresult'>
+<h3>AIESEC members and Alumnus on Linkedin</h3>
+<?php 
+echo $this->groupmembers;
+?>
+<div style="clear:both"></div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+$(function() {
+	$( ".datepicker" ).datepicker({ changeYear: true,  yearRange: '1948:2012', changeMonth : true });
+});
+</script>
+<script type="text/javascript">
+var filter = 0;
+$(document).ready(function()
+		{
+	$('div.thefilters:even').each(function()
+			{
+		$(this).css({backgroundColor:'#fff',borderTop:'1px solid #f2f2f2'});
+			});
+
+	$('span#searchfilter').toggle(
+			function()
+			{
+				$('#filter4hub').show();
+				filter = 1;
+				
+			},function ()
+			{
+				$('#filter4hub').hide();
+				filter = 0;
+			});
+	
+	});
+
+
+</script>
+
+<script type="text/javascript" src="/scripts/searchalumni.js">
+</script>
