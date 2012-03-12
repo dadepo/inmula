@@ -1,0 +1,171 @@
+@CHARSET "ISO-8859-1";
+     body{
+            background-color:#6093ca;
+     	    background-color:#eee;
+     		background-color:#38c9de;
+            background-image:url('../images/bg.png');
+     	    background-repeat:repeat-x;
+            margin:0px;
+            font-family:Verdana;
+            font-size: 12px;
+            text-align:justify;
+     	
+        }
+        
+#my-modal
+	{
+	z-index:900000;
+	display:none;
+	width:400px;
+	height:200px;
+	background-color:#fff;
+	margin-top:0px;
+	position:absolute;
+	top:150px;
+	left:450px;
+		border:5px solid #000;
+	-webkit-border-radius:5px;
+    -moz-border-radius:5px;
+	border-radius:5px;
+}
+
+        
+       div.container
+       {
+        background-color:#fff;
+        
+        min-height:609px;
+        padding:1px;
+        -moz-background-clip: padding; /* for Mozilla browsers*/
+	-webkit-background-clip: padding;   /* Webkit */
+	background-clip: padding-box; /*  browsers with full support */
+        border: 10px solid rgb(100, 100, 100); /* default color */
+	border: 10px solid rgba(0, 0, 0, 0.1); /* rgba for transparency */
+       	
+       }
+       
+       div.content
+       {
+        min-height:570px;
+        overflow:auto;
+       }
+       
+        div.footer
+       {
+        border-top:1px solid #ccc;
+       }
+       
+       div#bleft
+       {
+        float:left;
+        width:300px;
+        padding-left:10px;
+        padding-top:10px;
+        border-right:1px solid #f7f7f7;
+       }
+       
+       div#bright
+       {
+        float:left;
+        padding:10px;
+        width:590px;
+       }
+       
+       div#intro
+       {
+        margin-top:20px;
+        padding:10px;
+        background-color:#fafafa;
+        border:1px solid #dfdfdf;
+       }
+       
+       .header_small
+       {
+        color:#6093ca;
+        font-family:"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
+       }
+       
+ .header_small_black
+       {
+        color:#777;
+       	padding:10px;
+        font-family:"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
+       }
+       
+       .desc
+	{
+		padding:10px;
+		font-size:11px;
+}
+       
+        .header_big
+       {
+        color:#000;
+        font-size:30px;
+       	margin:3px;
+        font-family:"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
+       }
+       
+       
+       .content ul
+       {
+        margin-top:0px;
+        list-style:none;
+        margin-left:0px;
+       }
+       
+       
+       .footer div
+       {
+        margin:5px;
+        float:right;
+       }
+       
+       
+       .button
+       {
+       	padding:10px;
+       	background-color:#2963a3;
+       	color:#fff;
+       	font-weight:bold;
+       	-moz-border-radius:5px;
+       	-webkit-border-radius:5px;
+       	border-radius:5px;
+        }
+       
+        /*form*/
+        
+        .zend_form
+        {
+        	margin:0px !important;
+        	padding:0px !important;
+        	
+}
+
+
+.required
+	{
+		margin-right:10px;
+}
+.zend_form label.required
+	{
+		width:150px;
+		margin-right:10px;
+		margin-left:-10px;
+}
+
+.zend_form dd
+	{
+		margin:5px 0px;
+}
+
+.form_title
+	{
+		margin:20px 20px 20px 20px;
+		font-size:18px;
+		font-weight:bold;
+		border-bottom:dotted 1px #ccc;
+		padding-bottom:5px;
+}
+}
+      
