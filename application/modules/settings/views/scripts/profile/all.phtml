@@ -1,0 +1,42 @@
+<div id="left_content_profile">
+<h2>Your Profile</h2>
+<div id="linkedin">
+<h6>All Alumni on AlumniHUB</h6>
+
+<style type="text/css">
+div#all li
+{
+    float:left;
+    margin:1px;
+}
+
+</style>
+
+<div style="width:840px;" id="all">
+<?php 
+@session_start();
+
+
+$this->hubmembers('50','70');
+
+?>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<hr/>
+
+</div>
+
+
+
+

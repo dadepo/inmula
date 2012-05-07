@@ -1,0 +1,62 @@
+<div id="left_content">
+
+<h2>Alumni Directory</h2>
+<span id='intro'>
+Find the directory of all AIESEC Alumni Offices all across the Countries AIESEC is present in. Use this tool to locate the office, get necessary contact and connect with the Alumni Assosication in your country
+</span>
+
+<style type="text/css">
+ul#offices li
+{
+	
+	margin:3px;
+	width:150px;
+	min-height:100px;
+	float:left;
+	border-left:1px dotted #c3c3c3;
+	padding-left:5px;
+	border-top:5px solid #f3f3f3;
+}
+</style>
+
+<h3>National Offices</h3>
+<div>
+<?php 
+foreach(range('A','Z') as $l)
+{
+	echo "<a href='#$l' style='margin:0px 5px;'>$l</a>";
+}
+?>
+</div>
+<ul id="offices">
+<?php 
+foreach($this->offices as $office)
+{
+	$country = $office['country'];
+	$webpage = $office['webpage'];
+	$subwebpage = substr((str_replace(array('www.','http://www.','http://'),'',$webpage)),0,15);
+	$linkedin = $office['linkedin'];
+	$sublinkedin = substr((str_replace(array('www.','http://www.','http://'),'',$linkedin)),0,15);
+	$facebook = $office['facebook'];
+	$subfacebook = substr((str_replace(array('www.','http://www.','http://'),'',$facebook)),0,15);
+	
+	$firstletter = substr($country,0,1);
+	
+	echo "<li><strong><a name='$firstletter'>$country</a></strong>";
+	if ($webpage != 'not_available')
+	//echo "<span style='font-size:10px;'>web:</span> <br/><a style='font-size:10px;' href='$webpage' target='_blank'>$subwebpage...</a><br/>";
+	echo "<br/><a style='font-size:10px;' href='$webpage' target='_blank'>Website</a>";
+	if ($linkedin != 'not_available')
+	//echo "<span style='font-size:10px;'>Linkedin:</span><br/> <a style='font-size:10px;' href='$linkedin' target='_blank'>$sublinkedin...</a><br/>";
+	echo "<br/> <a style='font-size:10px;' href='$linkedin' target='_blank'>LinkedIn</a>";
+	if ($facebook != 'not_available')
+	//echo "<span style='font-size:10px;'>Facebook:</span><br/><a style='font-size:10px;' href='$facebook' target='_blank'>$subfacebook...</a></li>";
+	echo "<br/><a style='font-size:10px;' href='$facebook' target='_blank'>Facebook</a></li>";
+}
+
+?>
+
+</ul>
+
+
+</div>

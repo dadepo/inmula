@@ -1,0 +1,283 @@
+<div id="left_content">
+
+<link rel="stylesheet" href="styles/aiesecform.css" type="text/css" />
+
+<div id="div_top">
+<h3 class="header_small_black">Add AIESEC Information</h3>
+<div class="desc">
+Update your profile with your AIESEC Information. You can add the various AIESEC events you attended while an active member, or update your profile information with various leadership roles you had in AIESEC.
+</div>
+
+
+
+</div>
+<br/>
+<h3 class="form_title">AIESEC Entity</h3>
+
+<form method="post" action="settings/updateprofile">
+<p><label for="aieseccountry" class="required">AIESEC Country:</label>
+<input type="text" name="aieseccountry" id="aieseccountry" value="" size="35"></p>
+
+<p><label for="lc" class="required">Local Committee:</label>
+<input type="text" name="homelc" id="lc" value="" size="35"></p>
+
+
+<h3 class="form_title">Past Roles in AIESEC</h3>
+
+
+
+
+<div id="pastroles">
+
+<div id='greybox'  id='rolebox'>
+
+<div class='inputbox'>
+<span>Role Title</span><br/><br/>
+<input name="rtitle[]" id="rtitle" type="text" class='span3'/>
+</div>
+
+<div class='inputbox'>
+<span>Country</span><br/><br/>
+<?php 
+echo $this->aiesecmcs('small','country','country[]');
+?>
+<!--<select class='small' id='country' style="font-size:11px">
+<option value=''>--Select Country--</option>
+<option>Nigeria</option>
+</select>-->
+<!--<input placeholder="Local Committee" size='10' style="text-size:10px;" type="text" class='small'/>-->
+</div>
+
+<div class='inputbox'>
+<span>Local Committee</span><br/><br/>
+<!-- <input id='lcx' size='10' style="text-size:10px;" type="text" class='small'/>-->
+<?php 
+echo $this->aieseclcs('small','lcx','lc[]');
+?>
+
+</div>
+
+<div class='inputbox'>
+<span>From</span><br/><br/>
+<input size='10' id='fromdate' name='fromdate[]' style="text-size:10px;" type="text" class='small datepicker'/>
+</div>
+
+<div class='inputbox'>
+<span>To</span><br/><br/>
+<input size='10' id='todate' name='todate[]' style="text-size:10px;" type="text" class='small datepicker'/>
+<!--<input type="button" value="Add More +" class="btn addmore" id='addroles' />-->
+<a style='display:block;margin-left:110px;margin-top:-10px' class="addmore" id='addroles'>Add More</a>
+</div>
+
+<div style="clear:both"></div>
+<br/>
+<div id='addedroles'>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+<h3 class="form_title">Past Internships</h3>
+
+
+<div id="pastinternships">
+
+<div id='greybox'  id='rolebox'>
+
+<div class='inputbox'>
+<span>Company</span><br/><br/>
+<input id= "coy" type="text" name='coy[]' class='span3'/>
+</div>
+
+<div class='inputbox'>
+<span>Country</span><br/><br/>
+<?php 
+echo $this->aiesecmcs('small','countryinternship','countryinternship[]');
+?>
+</div>
+
+<div class='inputbox'>
+<span>Local Committee</span><br/><br/>
+<!--  <input id='lcxi' size='10' style="text-size:10px;" type="text" class='small'/>-->
+<?php 
+echo $this->aieseclcs('small','lcxi','lci[]');
+?>
+</div>
+
+<div class='inputbox'>
+<span>From</span><br/><br/>
+<input size='10' id='fromdatei' name='fromdatei[]' style="text-size:10px;" type="text" class='small datepicker'/>
+</div>
+
+<div class='inputbox'>
+<span>To</span><br/><br/>
+<input size='10' id='todatei' name='todatei[]' style="text-size:10px;" type="text" class='small datepicker'/>
+<!-- <input type="button" value="Add" class="btn info" id='addinternships' />-->
+<a style='display:block;margin-left:110px;margin-top:-10px' class="addmore" id='addinternships'>Add More</a>
+</div>
+
+<div style="clear:both"></div>
+<br/>
+<div id='addedinternships'>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3 class="form_title">AIESEC Events Attended</h3>
+<div id="pastevents">
+
+<div id='greybox'  id='rolebox'>
+
+
+
+<div class='inputbox'>
+<span>Where</span><br/><br/>
+<?php 
+echo $this->aiesecmcs('small','countryevent','countryevent[]');
+?>
+</div>
+
+
+<div class='inputbox'>
+<span>When</span><br/><br/>
+<?php 
+//year helper generator
+//library/Helper/Form/Year.php
+echo $this->year('cyear','yearevent','yearevent[]');
+?>
+
+</div>
+
+
+<div class='inputbox'>
+<span>Type of Event</span><br/><br/>
+<?php 
+echo $this->formSelect('typeofevent','',array('id'=>'typeevent','name'=>'typeevent[]'),array('IC'=>'IC','IPM'=>'IPM'));
+?>
+ <!-- <input type="button" value="Add" class="btn info" id='addevents' />-->
+ <a style='display:block;margin-left:220px;margin-top:-10px' class="addmore" id='addevents'>Add More</a>
+</div>
+
+<div style="clear:both"></div>
+<br/>
+<div id='addedevents'>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3 class="form_title">Current Activity in AIESEC</h3>
+<div id='currentactivity'>
+<?php 
+echo $this->formCheckbox('presentrole[]','boa',array(),array()). "  Board of Advisor". "<br/>";
+echo $this->formCheckbox('presentrole[]','intern_taker',array(),array()). "  Intern Taker". "<br/>";
+echo $this->formCheckbox('presentrole[]','sponsor',array(),array()). "  Sponsor". "<br/>";
+?>
+</div>
+
+
+
+<h3 class="form_title">Online Connection</h3>
+<div id='onlineconnection'>
+<div id='greybox'  id='rolebox'>
+<p><span><img src="<?php echo Zend_Registry::get('url') ?>/images/fbicon.png" /></span> <em id='fb'>http://www.facebook.com/</em><input type='text' name='facebook'/></p>
+<p><span><img src="<?php echo Zend_Registry::get('url') ?>/images/twittericon.png" /></span> <em id='twitter'>http://www.twitter.com/</em><input type='text' name='twitter'/></p>
+<p><span><img src="<?php echo Zend_Registry::get('url') ?>/images/emailicon.png" /></span> <em id='email'>Alternate Emails</em><input type='text' name='emails'/></p>
+</div>
+</div>
+
+
+
+<input type="submit" class="btn primary" style="margin-left:10px"/>
+</form>
+<?php 
+echo $this->form;
+?>
+</div>
+
+<script type="text/javascript" src="scripts/addroles.js">
+
+</script>
+
+<script type="text/javascript" src="scripts/addinternships.js">
+
+</script>
+
+<script type="text/javascript" src="scripts/addevents.js">
+
+</script>
+
+<script type="text/javascript">
+$(function() {
+	$( ".datepicker" ).datepicker({ changeYear: true,  yearRange: '1948:2012',changeMonth : true });
+});
+</script>

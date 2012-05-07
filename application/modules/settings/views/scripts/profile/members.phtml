@@ -1,0 +1,109 @@
+<div id="left_content_profile">
+<h2>Your Profile</h2>
+<div id="linkedin">
+<h6><?php echo $this->lname ?>'s Profile on Linkedin</h6>
+<div style="float:left;width:100px;">
+<?php 
+@session_start();
+$profilepix =  $_SESSION['profilepix'];
+
+
+echo "<img src='$this->profilepix' />";
+?>
+</div>
+
+<div style="float:left;width:320px;">
+<p><strong>Industry: </strong><br/><?php echo $this->industry;?></p>
+<p style='width:260px'><strong>Description: <br/></strong><?php echo $this->headline;?></p>
+<br/>
+
+<p><a href="<?php echo $this->memberurl ?>" target='_blank' class="btn primary">Connect on Linkedin</a></p>
+</div>
+
+
+<div style="float:left;margin-top:-30px;width:400px;height:200px;background-color:#f9f9f9;padding:10px">
+<h6><?php echo $this->lname ?>'s  Connections on Linkedin</h6>
+<?php 
+if ($this->connections == "<ul id='yconnections'></ul>")//clean this up after Launch. this is not the best way to do this!!!
+{
+	echo "<em style='color:#13a7c5'>You have to connect with $this->lname on Linkedin before you are allowed to view connections</em>";
+}
+else 
+{
+	echo $this->connection;
+}
+?>
+
+</div>
+
+
+
+
+</div>
+
+<hr/>
+<div style="clear:both"></div>
+<div id="tabs">
+<ul class="tabs">
+  <li class="active"><a href="#personal">Personal</a></li>
+  <li><a href="#pastroles">Past Roles</a></li>
+  <li><a href="#pastinternships">Past Internships</a></li>
+  <li><a href="#pastevents">Past Events</a></li>
+  <li><a href="#activities">Current Activities</a></li>
+</ul>
+ 
+<div class="pill-content">
+
+  <div class="active" id="personal">
+  <?php 
+  //$this->profile
+  $this->showprofile('personal','no',true,$this->id);
+  ?>
+  
+  </div>
+  
+  <div id="pastroles">
+  <?php 
+  $this->showprofile('pastroles','no',true, $this->id);
+  ?>
+  </div>
+  
+  <div id="pastinternships">
+  <?php 
+  $this->showprofile('pastinternships','no',true,$this->id);
+  ?>
+  </div>
+  
+  <div id="pastevents">
+  <?php 
+  $this->showprofile('pastevents','no',true, $this->id);
+  ?>
+  
+  </div>
+  
+  <div id="activities">
+  <?php 
+  $this->showprofile('activities','no',true, $this->id,$this->present_role);
+  ?>
+  </div>
+  
+</div>
+ 
+<script>
+  $(function () {
+    $('.tabs').tabs()
+  })
+</script>
+</div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function()
+		{
+	$("ul.alternate li:odd").css({'backgroundColor':'#f5f5f5'});
+		}
+	
+		);
+</script>
+
+
